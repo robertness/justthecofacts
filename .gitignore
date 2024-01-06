@@ -5,3 +5,5 @@
 .Ruserdata
 venv/*
 *.Rproj
+raw_data/*
+*.nb.html

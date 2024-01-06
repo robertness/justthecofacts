@@ -1,0 +1,34 @@
+---
+title: "Downloading Datasets from Huggingface in R"
+output: html_notebook
+---
+
+Downloading requires Python, so we'll use the reticulate package in R. This will let us make use of Huggingface's datasets library.
+
+```{r libraries}
+library(reticulate)
+datasets <- import('datasets')
+```
+
+The following loads the articles table.
+
+```{r articles}
+articles_dataset <- datasets$load_dataset("Cofacts/line-msg-fact-check-tw", "articles")
+articles <- tibble::as_tibble(articles_dataset$train$to_pandas())
+head(articles)
+```
+
+And this loads article_replies.
+
+```{r article_replies}
+article_replies_dataset <- datasets$load_dataset("Cofacts/line-msg-fact-check-tw", "article_replies")
+article_replies <- tibble::as_tibble(article_replies_dataset$train$to_pandas())
+head(article_replies)
+```
+
+The raw_data file is ignored on .gitignore. Dump the data files here as csv's. Use the naming template <table_name>.csv. Write new workflows that load csv's from this directory.
+
+```{r save_data}
+write_csv(articles, "raw_data/articles.csv")
+write_csv(article_replies, "raw_data/article_replies.csv")
+```
