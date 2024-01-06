@@ -1,6 +1,12 @@
-# License
+# JustTheCofacts
 
-## For the Dataset
+This repository contains scripts in R and Python for exploring the [Cofacts data](https://huggingface.co/Cofacts) on Huggingface. 
+
+[Cofacts](https://cofacts.tw/) is a crowdsourced fact-checking project originating from Taiwan. It aims to combat misinformation, particularly the kind that spreads through instant messaging and social media platforms. 
+
+## License and Use
+
+### For the Dataset
 
 [Cofacts Data User Agreement（Cofacts 真的假的 資料使用者條款）](https://github.com/cofacts/opendata/blob/master/LEGAL.md)
 
